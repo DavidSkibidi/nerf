@@ -29,9 +29,37 @@ setupButton.addEventListener('click', () => {
 
 function updateGoalList(listElement, goals) {
     listElement.innerHTML = '';
+    goals.forEach((goal, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = goal;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Smazat';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.addEventListener('click', () => {
+            goals.splice(index, 1);
+            updateGoalList(listElement, goals);
+        });
+
+        listItem.appendChild(deleteButton);
+        listElement.appendChild(listItem);
+    });
+}
+
+
+function updateGoalList(listElement, goals) {
+    listElement.innerHTML = '';
     goals.forEach(goal => {
         const listItem = document.createElement('li');
         listItem.textContent = goal;
         listElement.appendChild(listItem);
+    });
+}
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker byl úspěšně zaregistrován:', reg))
+            .catch(err => console.error('Registrace Service Worker selhala:', err));
     });
 }
