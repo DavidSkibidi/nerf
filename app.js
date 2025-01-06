@@ -35,23 +35,13 @@ function updateGoalList(listElement, goals) {
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Smazat';
-        deleteButton.style.marginLeft = '10px';
+        deleteButton.className = 'delete';
         deleteButton.addEventListener('click', () => {
             goals.splice(index, 1);
             updateGoalList(listElement, goals);
         });
 
         listItem.appendChild(deleteButton);
-        listElement.appendChild(listItem);
-    });
-}
-
-
-function updateGoalList(listElement, goals) {
-    listElement.innerHTML = '';
-    goals.forEach(goal => {
-        const listItem = document.createElement('li');
-        listItem.textContent = goal;
         listElement.appendChild(listItem);
     });
 }
