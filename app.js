@@ -46,7 +46,7 @@ function updateGoalList(listElement, goals) {
     });
 }
 
-if ('serviceWorker' in navigator) {
+if ('sw' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
             .then(reg => console.log('Service Worker byl úspěšně zaregistrován:', reg))
