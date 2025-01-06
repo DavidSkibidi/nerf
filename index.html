@@ -1,0 +1,29 @@
+<!-- Hlavni web. stranka aplikace -->
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deník Cílů</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Deník Cílů</h1>
+            <button id="setup-button">Nastavení cílů</button>
+        </header>
+        <main id="goal-list">
+            <h2>Krátkodobé cíle</h2>
+            <ul id="short-term-goals"></ul>
+            <h2>Střednědobé cíle</h2>
+            <ul id="mid-term-goals"></ul>
+            <h2>Dlouhodobé cíle</h2>
+            <ul id="long-term-goals"></ul>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
