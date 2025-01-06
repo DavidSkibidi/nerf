@@ -35,6 +35,9 @@ li {
     padding: 0.5em;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button {
@@ -48,4 +51,17 @@ button {
 
 button:hover {
     background-color: #1976d2;
+}
+
+button.delete {
+    padding: 0.3em 0.7em;
+    background-color: #f44336;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background-color: #d32f2f;
 }
